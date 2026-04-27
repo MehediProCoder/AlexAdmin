@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog - Vertical Image Support</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #2d3436;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0088cc;
+            text-decoration: none;
+        }
+
+        .telegram-icon {
+            width: 30px;
+            height: 30px;
+            fill: #0088cc;
+            transition: transform 0.2s;
+        }
+
+        .telegram-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Blog Grid */
+        #blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .post-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .post-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .post-link:hover .post-card {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Handling 720x1280 Images */
+        .image-wrapper {
+            width: 100%;
+            height: 250px; /* Fixed height to keep cards uniform */
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 100%;
+            /* This is the magic: it crops the vertical image to fit the horizontal box */
+            object-fit: cover; 
+            /* Optional: Focus on the top of the image if it's a person/subject */
+            object-position: center; 
+        }
+
+        .post-content {
+            padding: 20px;
+        }
+
+        .post-content h2 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
+
+        .post-meta {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* Responsive Breakpoints */
+        @media (min-width: 600px) {
+            #blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .image-wrapper { height: 280px; }
+        }
+
+        @media (min-width: 1000px) {
+            #blog-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Aʟᴇx Aᴅᴍɪɴ</a>
+            <a href="https://t.me/VIPViralZone" target="_blank">
+                <svg class="telegram-icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.36-.49.99-.75 3.87-1.68 6.45-2.79 7.74-3.33 3.68-1.54 4.44-1.81 4.94-1.82.11 0 .35.03.51.16.13.11.17.26.19.37.01.07.01.21 0 .33z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="blog-grid"></div>
+    </main>
+
+    <script>
+        const myPosts = [
+            {
+                title: "Optimizing Vertical Media",
+                date: "April 26, 2026",
+                // Using a 720x1280 placeholder
+                image: "https://images.unsplash.com/photo-1551817958-c5b5d1b74a23?q=80&w=720&auto=format&fit=crop",
+                url: "articles/article.html",
+                excerpt: "How to handle portrait orientation images in a grid layout."
+            },
+            {
+                title: "Telegram Backup Strategies",
+                date: "April 25, 2026",
+                image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=720&auto=format&fit=crop",
+                url: "sms.html",
+                excerpt: "Keep your channel content safe using secondary backup zones."
+            },
+            {
+                title: "Linux Setup for 2026",
+                date: "April 24, 2026",
+                image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=720&auto=format&fit=crop",
+                url: "#",
+                excerpt: "The best tools and scripts for your Samsung Galaxy and Linux integration."
+            }
+        ];
+
+        const grid = document.getElementById('blog-grid');
+
+        function renderBlog() {
+            grid.innerHTML = myPosts.map(post => `
+                <a href="${post.url}" class="post-link">
+                    <article class="post-card">
+                        <div class="image-wrapper">
+                            <img src="${post.image}" alt="${post.title}" class="post-image">
+                        </div>
+                        <div class="post-content">
+                            <span class="post-meta">📅 ${post.date}</span>
+                            <h2>${post.title}</h2>
+                            <p>${post.excerpt}</p>
+                        </div>
+                    </article>
+                </a>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', renderBlog);
+    </script>
+</body>
+</html>
