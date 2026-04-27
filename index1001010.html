@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Blog - Vertical Image Support</title>
+    <title>Aʟᴇx Aᴅᴍɪɴ | Proper Image View</title>
     
     <style>
         * {
@@ -26,7 +26,6 @@
             margin: 0 auto;
         }
 
-        /* Header Styling */
         header {
             background: #ffffff;
             padding: 1rem 0;
@@ -54,14 +53,8 @@
             width: 30px;
             height: 30px;
             fill: #0088cc;
-            transition: transform 0.2s;
         }
 
-        .telegram-icon:hover {
-            transform: scale(1.1);
-        }
-
-        /* Blog Grid */
         #blog-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -86,24 +79,23 @@
 
         .post-link:hover .post-card {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Handling 720x1280 Images */
+        /* FIXED BOX - CONTAINED IMAGE */
         .image-wrapper {
             width: 100%;
-            height: 250px; /* Fixed height to keep cards uniform */
+            height: 250px; 
             overflow: hidden;
-            background-color: #eee;
+            /* background-color: #1a1a1a; Professional dark bars on sides */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .post-image {
-            width: 100%;
-            height: 100%;
-            /* This is the magic: it crops the vertical image to fit the horizontal box */
-            object-fit: cover; 
-            /* Optional: Focus on the top of the image if it's a person/subject */
-            object-position: center; 
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Full image, no crop */
         }
 
         .post-content {
@@ -123,7 +115,6 @@
             display: block;
         }
 
-        /* Responsive Breakpoints */
         @media (min-width: 600px) {
             #blog-grid { grid-template-columns: repeat(2, 1fr); }
             .image-wrapper { height: 280px; }
@@ -156,7 +147,6 @@
             {
                 title: "Optimizing Vertical Media",
                 date: "April 26, 2026",
-                // Using a 720x1280 placeholder
                 image: "images/photo_2026-04-01_11-28-52.jpg",
                 url: "articles/article.html",
                 excerpt: "How to handle portrait orientation images in a grid layout."
@@ -172,15 +162,8 @@
                 title: "Linux Setup for 2026",
                 date: "April 24, 2026",
                 image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=720&auto=format&fit=crop",
-                url: "articles/article10.html",
+                url: "#",
                 excerpt: "The best tools and scripts for your Samsung Galaxy and Linux integration."
-            },
-            {
-                title: "Telegram Backup Strategies",
-                date: "April 25, 2026",
-                image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=720&auto=format&fit=crop",
-                url: "articles/article5.html",
-                excerpt: "Keep your channel content safe using secondary backup zones."
             }
         ];
 

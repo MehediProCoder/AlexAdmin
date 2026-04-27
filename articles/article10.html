@@ -21,7 +21,7 @@
 
         .container {
             width: 92%;
-            max-width: 800px; /* Optimized for reading */
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -39,7 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1100px; /* Header stays wider than text */
+            max-width: 1100px;
         }
 
         .logo {
@@ -77,39 +77,34 @@
         }
 
         .author-info h4 { font-size: 1.1rem; color: #1a1a1a; }
-        .author-info p { font-size: 0.85rem; color: #777; }
 
-        /* 4. Article Content */
+        /* 4. Article Content - Optimized Image */
         h1 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             line-height: 1.2;
             margin: 20px 0;
             color: #1a1a1a;
+            text-align: center;
         }
 
         .featured-image-container {
             width: 100%;
-            height: 450px; /* Crop for 720x1280 vertical images */
+            max-width: 300px; /* Small size */
+            aspect-ratio: 9 / 16; /* Proper portrait ratio */
             overflow: hidden;
             border-radius: 15px;
-            margin: 30px 0;
+            margin: 20px auto; /* Centered */
+            background-color: #f8f9fa;
         }
 
         .featured-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Fills the container perfectly */
             object-position: center;
         }
 
-        /* .article-body {
-            font-size: 1.15rem;
-            color: #333;
-        }
-
-        .article-body p { margin-bottom: 20px; } */
-
-        /* 5. Promotional Section (Price List) */
+        /* 5. Promotional Section */
         .promo-section {
             background-color: #f8f9fa;
             border: 1px solid #e1e4e8;
@@ -173,11 +168,9 @@
 
         .admin-box a { color: #6b46c1; font-weight: bold; text-decoration: none; }
 
-        /* 6. Responsive Styles */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
-            .featured-image-container { height: 300px; }
-            /* .article-body { font-size: 1.05rem; } */
+            .featured-image-container { max-width: 250px; } /* Slightly smaller on phone */
         }
     </style>
 </head>
@@ -186,7 +179,7 @@
     <header>
         <div class="container" style="max-width: 1100px;">
             <a href="../index.html" class="logo">Aʟᴇx Aᴅᴍɪɴ</a>
-            <a href="https://t.me/VIPViralZone" target="_blank" title="Join Telegram">
+            <a href="https://t.me/VIPViralZone" target="_blank">
                 <svg class="telegram-icon" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.36-.49.99-.75 3.87-1.68 6.45-2.79 7.74-3.33 3.68-1.54 4.44-1.81 4.94-1.82.11 0 .35.03.51.16.13.11.17.26.19.37.01.07.01.21 0 .33z"/>
                 </svg>
@@ -195,13 +188,12 @@
     </header>
 
     <main class="container">
-        <h1>কিভাবে আমাদের প্রিমিয়াম গ্রুপে জয়েন করবেন?</h1>
+        <h1>কিভাবে আমাদের প্রিমিয়াম গ্রুপে জয়েন করবেন?</h1>
 
         <section class="author-box">
             <img src="../adminImage/alexadmin.jpg" alt="Admin" class="author-photo">
             <div class="author-info">
                 <h4>👑 Aʟᴇx Aᴅᴍɪɴ 👑</h4>
-                <!-- <p>Verified Premium Seller</p> -->
             </div>
         </section>
 
@@ -209,32 +201,26 @@
             <img src="../images/photo_2026-04-01_11-28-52.jpg" class="featured-image" alt="Promotion Cover">
         </div>
 
-        <!-- <article class="article-body">
-            <p>আমাদের প্রিমিয়াম সার্ভিসে আপনাকে স্বাগতম। আমরা দিচ্ছি সেরা মানের কন্টেন্ট এবং আজীবন এক্সেস সুবিধা। নিচে আমাদের গ্রুপ লিস্ট এবং প্রাইস ডিটেইলস দেওয়া হলো।</p>
-            
-            <p>আমাদের সকল গ্রুপ টেলিগ্রামের মাধ্যমে পরিচালিত হয়। জয়েন করার পর আপনি সকল কন্টেন্ট আনলিমিটেড ডাউনলোড বা স্ট্রিম করতে পারবেন। যেকোনো প্রয়োজনে আমাদের এডমিনদের সাথে যোগাযোগ করুন।</p>
-        </article> -->
-
         <section class="promo-section">
             <div class="promo-header">
-                👑 সকল প্রকার বেস্ট সব প্রিমিয়াম গ্রুপ পাবেন আমাদের কাছে 😊
+                👑 সকল প্রকার বেস্ট সব প্রিমিয়াম গ্রুপ পাবেন আমাদের কাছে 😊
             </div>
 
             <div class="price-list-box">
                 <h3 class="price-title">✅ প্রাইস লিস্ট: 💠 আজীবন এক্সেস 💠</h3>
                 <ul class="price-list">
-                    <li>১. বা*চ্ছাদের প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
-                    <li>২. হিজাবি প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
-                    <li>৩. বাংলা প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
-                    <li>৪. রে*প প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
-                    <li>৫. মা ছেলের প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
+                    <li>১. বা*চ্ছাদের প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
+                    <li>২. হিজাবি প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
+                    <li>৩. বাংলা প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
+                    <li>৪. রে*প প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
+                    <li>৫. মা ছেলের প্রিমিয়াম ➔ ৪০০ টাকা 💸</li>
                 </ul>
             </div>
 
             <div class="combo-offer">
                 <h3 class="price-title">👑 সুপার কম্বো অফার:</h3>
-                <p>যেকোনো ৩টি গ্রুপ মাত্র <strong>১০০০ টাকায়!</strong> ✅</p>
-                <p>সবগুলো (৫টি) গ্রুপ মাত্র <strong>১৬০০ টাকায়!</strong> 🛍️</p>
+                <p>যেকোনো ৩টি গ্রুপ মাত্র <strong>১০০০ টাকায়!</strong> ✅</p>
+                <p>সবগুলো (৫টি) গ্রুপ মাত্র <strong>১৬০০ টাকায়!</strong> 🛍️</p>
             </div>
 
             <div class="demo-link">
@@ -243,16 +229,12 @@
             </div>
 
             <div class="admin-contact">
-                <p>দ্রুত জয়েন হতে এখনই মেসেজ দিন!</p>
-                <div class="admin-box">
-                    💀 Aᴅᴍɪɴ : <a href="https://t.me/JeffereyEpstein_Here" target="_blank">👑 Aʟᴇx Aᴅᴍɪɴ 👑</a>
-                </div>
+                <p>দ্রুত জয়েন হতে এখনই মেসেজ দিন!</p>
                 <div class="admin-box">
                     💀 Aᴅᴍɪɴ : <a href="https://t.me/JeffereyEpstein_Here" target="_blank">👑 Aʟᴇx Aᴅᴍɪɴ 👑</a>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer style="text-align: center; padding: 40px 0; color: #888; font-size: 0.9rem; border-top: 1px solid #eee;">
@@ -260,4 +242,4 @@
     </footer>
 
 </body>
-</html> 
+</html>
